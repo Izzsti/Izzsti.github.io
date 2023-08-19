@@ -1,0 +1,25 @@
+.jumbotron{
+    padding: 4rem;
+    background-color: black;
+    color: white;
+}
+@media only screen and (max-width: 768px){
+    #img1{
+        margin-top: 7px;
+        width:fit-content;
+        height:fit-content;
+    }
+}
+#p2{
+   float: right;
+   margin-right:6rem ;
+}
+#p3{
+    text-align: justify;
+}
+#p4{
+    text-align: justify;
+}
+img{
+    float: right;
+}

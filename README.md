@@ -1,1 +1,0 @@
-# cobadluceuyy.git.io
