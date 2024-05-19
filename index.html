@@ -1,15 +1,446 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" 
-    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    
-    <link rel="stylesheet" href="1.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TEST 1</title>
+    <link rel="stylesheet" href="TEST1.css" />
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+        color: rgba(0, 0, 0, 4);
+      }
+      .hidden {
+        opacity: 1;
+        transition: all 4s;
+      }
+      .show {
+        opacity: 0;
+        transition: all 4s;
+      }
+      .main {
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .text {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 30vh;
+      }
+      button {
+        padding: 3px 7px;
+        font-size: 26px;
+        font-weight: 600;
+        border: 2px solid white;
+        background-color: transparent;
+        width: 25vh;
+        height: 10vh;
+        transition: 0.4s;
+        border-radius: 50px;
+      }
+      button:hover {
+        background: black;
+        color: white;
+      }
+      .teks-masi span {
+        position: relative;
+      }
+      .teks-masi {
+        font-size: 46px;
+        font-weight: 600;
+        min-width: 360px;
+        position: relative;
+        text-align: center;
+      }
+
+      .teks-masi span::before {
+        content: "MIPA 1";
+        color: red;
+        animation: teks 50s infinite;
+      }
+      .teks-masi span::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 100%;
+        background-color: grey;
+        right: -8px;
+      }
+
+      @keyframes teks {
+        0%,
+        2.7% {
+          content: "MIPA 1";
+        }
+        2.8%,
+        5.4% {
+          content: "Achmad";
+        }
+        5.5%,
+        8.1% {
+          content: "Adel";
+        }
+        8.2%,
+        10.8% {
+          content: "Amelia";
+        }
+        10.9%,
+        13.5% {
+          content: "Aminah";
+        }
+        13.6%,
+        16.2% {
+          content: "Andhika";
+        }
+        16.3%,
+        18.9% {
+          content: "Angelica";
+        }
+        19%,
+        21.6% {
+          content: "Annisa";
+        }
+        21.7%,
+        24.3% {
+          content: "Audrey";
+        }
+        24.4%,
+        27% {
+          content: "Cici";
+        }
+        27.1%,
+        29.7% {
+          content: "Danu";
+        }
+        29.8%,
+        32.4% {
+          content: "Deshita";
+        }
+        32.5%,
+        35.1% {
+          content: "Dessy";
+        }
+        35.2%,
+        37.8% {
+          content: "Devino";
+        }
+        37.9%,
+        40.5% {
+          content: "Faiz";
+        }
+        40.6%,
+        43.2% {
+          content: "Farhan";
+        }
+        43.3%,
+        45.9% {
+          content: "Intan";
+        }
+        46%,
+        48.6% {
+          content: "Jasmine";
+        }
+        48.7%,
+        51.3% {
+          content: "Kurnia";
+        }
+        51.4%,
+        54% {
+          content: "Mallika";
+        }
+        54.1%,
+        56.7% {
+          content: "Martha";
+        }
+        56.8%,
+        59.4% {
+          content: "Mediane";
+        }
+        59.5%,
+        62.1% {
+          content: "M. Irfan";
+        }
+        62.2%,
+        64.8% {
+          content: "M. Ilyas";
+        }
+        64.9%,
+        67.5% {
+          content: "M. Raihan";
+        }
+        67.6%,
+        70.2% {
+          content: "M. Syamsul";
+        }
+        70.3%,
+        72.9% {
+          content: "Raja";
+        }
+        73%,
+        75.6% {
+          content: "Renita";
+        }
+        75.7%,
+        78.3% {
+          content: "Riandi";
+        }
+        78.4%,
+        81% {
+          content: "Rizda";
+        }
+        81.1%,
+        83.7% {
+          content: "Saffanah";
+        }
+        83.8%,
+        86.4% {
+          content: "Salsabila";
+        }
+        86.5%,
+        89.1% {
+          content: "Sendy";
+        }
+        89.2%,
+        91.8% {
+          content: "Siti Nur";
+        }
+        91.9%,
+        94.5% {
+          content: "Syafina";
+        }
+        94.6%,
+        97.2% {
+          content: "Syakila";
+        }
+        97.3%,
+        100% {
+          content: "Zidane";
+        }
+      }
+
+      .vd {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
+      }
+    </style>
   </head>
   <body>
-    <h1 style="text-align:center;">Work in progress</h1>
+    <div class="main">
+      <video autoplay muted loop class="vd">
+        <source src="videoplayback.mp4" type="video/mp4" />
+      </video>
+      <div class="text" class="hidden">
+        <div class="teks-masi">Hello ! Welcome to <span></span>'s Website</div>
+        <button>Click Me !</button>
+      </div>
+    </div>
+    <script>
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          console.log(entry);
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          } else {
+            entry.target.classList.remove("show");
+          }
+        });
+      });
+
+      const hiddenElement = document.querySelectorAll(".hidden");
+      hiddenElement.forEach((el) => observer.observe(el));
+    </script>
   </body>
-  </html>
+</html>
+<!--
+  .teks-masi span {
+  position: relative;
+}
+.teks-masi {
+  font-size: 36px;
+  font-weight: 600;
+  min-width: 360px;
+  position: relative;
+  text-align: center;
+}
+
+.teks-masi span::before {
+  content: "MIPA 1";
+  color: aqua;
+  animation: teks 40s infinite;
+}
+.teks-masi span::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 100%;
+  background-color: grey;
+  right: -8px;
+}
+
+@keyframes teks {
+  0%,
+  2.7% {
+    content: "MIPA 1";
+  }
+  2.8%,
+  5.4% {
+    content: "Achmad";
+  }
+  5.5%,
+  8.1% {
+    content: "Adel";
+  }
+  8.2%,
+  10.8% {
+    content: "Amelia";
+  }
+  10.9%,
+  13.5% {
+    content: "Aminah";
+  }
+  13.6%,
+  16.2% {
+    content: "Andhika";
+  }
+  16.3%,
+  18.9% {
+    content: "Angelica";
+  }
+  19%,
+  21.6% {
+    content: "Annisa";
+  }
+  21.7%,
+  24.3% {
+    content: "Audrey";
+  }
+  24.4%,
+  27% {
+    content: "Cici";
+  }
+  27.1%,
+  29.7% {
+    content: "Danu";
+  }
+  29.8%,
+  32.4% {
+    content: "Deshita";
+  }
+  32.5%,
+  35.1% {
+    content: "Dessy";
+  }
+  35.2%,
+  37.8% {
+    content: "Devino";
+  }
+  37.9%,
+  40.5% {
+    content: "Faiz";
+  }
+  40.6%,
+  43.2% {
+    content: "Farhan";
+  }
+  43.3%,
+  45.9% {
+    content: "Intan";
+  }
+  46%,
+  48.6% {
+    content: "Jasmine";
+  }
+  48.7%,
+  51.3% {
+    content: "Kurnia";
+  }
+  51.4%,
+  54% {
+    content: "Mallika";
+  }
+  54.1%,
+  56.7% {
+    content: "Martha";
+  }
+  56.8%,
+  59.4% {
+    content: "Mediane";
+  }
+  59.5%,
+  62.1% {
+    content: "M. Irfan";
+  }
+  62.2%,
+  64.8% {
+    content: "M. Ilyas";
+  }
+  64.9%,
+  67.5% {
+    content: "M. Raihan";
+  }
+  67.6%,
+  70.2% {
+    content: "M. Syamsul";
+  }
+  70.3%,
+  72.9% {
+    content: "Raja";
+  }
+  73%,
+  75.6% {
+    content: "Renita";
+  }
+  75.7%,
+  78.3% {
+    content: "Riandi";
+  }
+  78.4%,
+  81% {
+    content: "Rizda";
+  }
+  81.1%,
+  83.7% {
+    content: "Saffanah";
+  }
+  83.8%,
+  86.4% {
+    content: "Salsabila";
+  }
+  86.5%,
+  89.1% {
+    content: "Sendy";
+  }
+  89.2%,
+  91.8% {
+    content: "Siti Nur";
+  }
+  91.9%,
+  94.5% {
+    content: "Syafina";
+  }
+  94.6%,
+  97.2% {
+    content: "Syakila";
+  }
+  97.3%,
+  100% {
+    content: "Zidane";
+  }
+}
+
+-->
