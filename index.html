@@ -3,212 +3,255 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TEST 1</title>
-    <link rel="stylesheet" href="1.css" />
-    
+    <title>TEST</title>
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: "Courier New", Courier, monospace;
+      }
+
+      .main {
+        display: flex;
+        flex-direction: column;
+        width: 100%; /*Spesifik*/
+        height: 100vh; /*spesiifk satuan, coba terus sampe muncul*/
+      }
+
+      .card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        height: 50%;
+        background-color: rgb(2, 43, 2);
+        position: absolute;
+        top: 25%;
+        left: 25%;
+        border-radius: 30px;
+        box-shadow: 5px 5px 5px 5px white color(srgb red green blue);
+        flex-direction: column;
+        column-gap: 1px;
+        justify-content: space-around;
+      }
+      li {
+        list-style: none;
+        margin-bottom: 15px;
+      }
+      h1 {
+        margin: 0;
+      }
+    </style>
   </head>
   <body>
     <div class="main">
-      <video autoplay muted loop class="vd">
-        <source src="videoplayback.mp4" type="video/mp4" />
-      </video>
-      <div class="text" class="hidden">
-        <div class="teks-masi">Hello ! Welcome to <span></span>'s Website</div>
-        <button>Click Me !</button>
+      <div style="flex-grow: 0.4; background-color: rgb(2, 43, 2)"></div>
+      <div style="flex-grow: 4.7; background-color: rgb(5, 135, 5)"></div>
+      <div style="flex-grow: 0.6; background-color: rgb(2, 43, 2)"></div>
+      <div style="flex-grow: 4.7; background-color: rgb(50, 58, 53)"></div>
+    </div>
+    <div class="card">
+      <img
+        src="The legend of speed.jpeg"
+        alt=""
+        width="100vw"
+        height="100vh"
+        style="
+          border-radius: 50%;
+          border: 2px solid white;
+
+          margin-top: 10px;
+          margin-bottom: 10px;
+        "
+      />
+      <div
+        class="teks"
+        style="
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+          background-color: yellow;
+          flex-direction: column;
+          margin-bottom: 3vh;
+        "
+      >
+        <h1>TES</h1>
+        <h1 style="margin: 5px 0px">TES</h1>
+        <h1>TES</h1>
       </div>
     </div>
-    <script>
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          console.log(entry);
-          if (entry.isIntersecting) {
-            entry.target.classList.add("show");
-          } else {
-            entry.target.classList.remove("show");
-          }
-        });
-      });
-
-      const hiddenElement = document.querySelectorAll(".hidden");
-      hiddenElement.forEach((el) => observer.observe(el));
-    </script>
   </body>
 </html>
+
 <!--
-  .teks-masi span {
-  position: relative;
-}
-.teks-masi {
-  font-size: 36px;
-  font-weight: 600;
-  min-width: 360px;
-  position: relative;
-  text-align: center;
-}
+    TESSS BARU
+    aduh kok jelek ya warnanya
+    aduh masalah color yaa, jgn nanya saya hihi
+    ala kadarnya dlu ya nanti dibenerin WKKWKW
+    tapi aqua nya mencolok 
+    gitu aja???
+   
 
-.teks-masi span::before {
-  content: "MIPA 1";
-  color: aqua;
-  animation: teks 40s infinite;
-}
-.teks-masi span::after {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 100%;
-  background-color: grey;
-  right: -8px;
-}
 
-@keyframes teks {
-  0%,
-  2.7% {
-    content: "MIPA 1";
-  }
-  2.8%,
-  5.4% {
-    content: "Achmad";
-  }
-  5.5%,
-  8.1% {
-    content: "Adel";
-  }
-  8.2%,
-  10.8% {
-    content: "Amelia";
-  }
-  10.9%,
-  13.5% {
-    content: "Aminah";
-  }
-  13.6%,
-  16.2% {
-    content: "Andhika";
-  }
-  16.3%,
-  18.9% {
-    content: "Angelica";
-  }
-  19%,
-  21.6% {
-    content: "Annisa";
-  }
-  21.7%,
-  24.3% {
-    content: "Audrey";
-  }
-  24.4%,
-  27% {
-    content: "Cici";
-  }
-  27.1%,
-  29.7% {
-    content: "Danu";
-  }
-  29.8%,
-  32.4% {
-    content: "Deshita";
-  }
-  32.5%,
-  35.1% {
-    content: "Dessy";
-  }
-  35.2%,
-  37.8% {
-    content: "Devino";
-  }
-  37.9%,
-  40.5% {
-    content: "Faiz";
-  }
-  40.6%,
-  43.2% {
-    content: "Farhan";
-  }
-  43.3%,
-  45.9% {
-    content: "Intan";
-  }
-  46%,
-  48.6% {
-    content: "Jasmine";
-  }
-  48.7%,
-  51.3% {
-    content: "Kurnia";
-  }
-  51.4%,
-  54% {
-    content: "Mallika";
-  }
-  54.1%,
-  56.7% {
-    content: "Martha";
-  }
-  56.8%,
-  59.4% {
-    content: "Mediane";
-  }
-  59.5%,
-  62.1% {
-    content: "M. Irfan";
-  }
-  62.2%,
-  64.8% {
-    content: "M. Ilyas";
-  }
-  64.9%,
-  67.5% {
-    content: "M. Raihan";
-  }
-  67.6%,
-  70.2% {
-    content: "M. Syamsul";
-  }
-  70.3%,
-  72.9% {
-    content: "Raja";
-  }
-  73%,
-  75.6% {
-    content: "Renita";
-  }
-  75.7%,
-  78.3% {
-    content: "Riandi";
-  }
-  78.4%,
-  81% {
-    content: "Rizda";
-  }
-  81.1%,
-  83.7% {
-    content: "Saffanah";
-  }
-  83.8%,
-  86.4% {
-    content: "Salsabila";
-  }
-  86.5%,
-  89.1% {
-    content: "Sendy";
-  }
-  89.2%,
-  91.8% {
-    content: "Siti Nur";
-  }
-  91.9%,
-  94.5% {
-    content: "Syafina";
-  }
-  94.6%,
-  97.2% {
-    content: "Syakila";
-  }
-  97.3%,
-  100% {
-    content: "Zidane";
-  }
-}
+    /*TULIS KOMEN DISINI
+      itu udahhh, aduhhhh
+      sip dah muncul
+      skrng akalin
+      kalo lebar mau full tulis aja 100%
+      wuih
+      salah ya?
+      bagian height nya masih ketinggian keliatannya
+      nah itu turuninnya giman
+      pake satuan vh, satuan yg sesuai device(sepertinya)
+      kalo 100vh berarti full 100% sesuai layar
+      sip
+      kalo gitu width nya juga bisa 100vh?
+      bisa
+      ohhhhh, baru tau satuan vh
+      lanjut dong dul card nya hihihi
+      kok setengah itu lebar nya
+      engga tuh
+      ga kalo width itu pake vw
+      coba ganti persen
+      nah itu enak udh responsive
+      itu udah persen
+      gas lajut card
+      pertma biar keliahatan atur tinggi lebar sesuai(spesifik) lalu kasih background color
+      kalo card gimana, kok ga nongol
+      kasih warna, terus?
+      makdusnya background tehhh
+      color itu buat dalam nya
+      hmmmm
+      buat timpa diatas div main pake position absolute
+      di div nya ya?
+      itu udh bener
+      tinggal atur posisi top right nya
+      command nya apa? a
+      top:;
+      heehehe
+      jgn keserignan auto
+      nahhh bisa juga margin.senyaman nya aja mana
+      kalo mau tengan tulis margin:0 auto; top right nya hapus
+      kalo ga pake marginn pake apa, top right left atau bottom
+      bisa pake vh ga bisa
+      akalin logika sangkut paut ama lebar tinggi div main
+      nah gimana tuh jarak biar bisa di titik tengah
+      maksudnya itu pake top, right doang diakalin?
 
+      bang bang mau nanya bang, apakah kalo perbaningan 50 50 akan selalu ditengah????
+      nda gampngnya 1:2:1 nah 2 itu lebar card sedanngkan jarak kiri kanan itu pake satuan yang sama 1:1
+      udah
+      tapi ini rada mengsong ke kiri wkwkkkkw
+      oh iya teh gimana tuh
+      coba pake persen top right nya
+      apa inni karna liatnya ga full ya? kan absolute
+      bisa itu, nah karena 1:2:1 agak ribet coba ganti top sama left aja  (top:50%; left:50%;)
+      loh
+      omaygat HAHHAHA
+      omaygatt tidak, s,alah di width height
+      nahkan nahkan coba gimana
+      wah
+      kegedean deh 50 50
+      nah manipulasi deh
+      kan jasmine udh ngirim satuan px nya dul
+      oh itu coba diterpin deh
+      tpi minus nya ga responsif
+      mo nangisssss
+      Gilee kita ngetik kode 180 bariss
+      kren ini mah
+      ngga ini kayaknya udh bag
+      haahhhahuas  50 50
+      sudah pasrah lebar tinggi nya hahahhahahaha
+      ngga cuyy coba liat full screem deh
+      ini ujungnya bisa dijadiin bulet gitu ga? bisar mirip layout jasmine
+      bisa pake border-radius satuan px aja
+
+      */
+      /*px aja
+        iiii
+        amazing
+         spiderman
+        minah buat isi nya pa ye
+        hah?
+        hem coba lenbih dimiripin
+        ih udh miripp ganti warna aqua jadi green
+        ini bisa dibersihin dlu gaa chatnya
+        bisa
+        hapus aja minah
+        WKWKWKW yaudha gausah kenang kenangan biar dikira bjorka
+        tapi nanti baris kode nya dikit  xixi
+        rapihin aja
+
+    MAIN FLEXBOX YA
+    gw nyimakk, ajarin dluu
+    kalo gw liat file lu yg lain keliatan ga? mksdnya ketawan ga di lu nya?
+    nama folder apa. projek fast
+    oh itu loh keliatan hemm boleh liat aje, g keliatan atas nya , cuma keliatan pas minah edit disini
+    ohh bagus bagus
+    kyk gini gambaran background nya
+    buat main content atau yg ditengah gimana menurut minah?
+    ini gw blm bisa liat live nyaaaaaa
+    cobaa balik ke file nya
+    folto lagi?
+    iyaa
+    dah lanjutin bro
+    yang bagian foto nama dan lain
+    itu tambah div doang??
+    bisaa juga
+    tpi diluar div main 
+    maksudnya gimana
+    yooo, nah bgitulah lnjyttt
+    mo tanyaaaaaa, flex itu apa?
+    itu buat ngatur posisi biar lebih mudah aja disusun
+    jelasnya liat di w3school
+    ini masuknya css?? oh iyaa ada ada
+    yoii
+    makasiiii dul. eh itu kok card nya bisa langsung ke center?
+    buat ulang
+    WAHAHHHAHHAHHHA KEJAM CUYY coba cmd+z
+    balik lagi tuh code
+    udah hafal 
+    wahhh
+    becanda HAHHHAH makasi dul
+     makasiiii dul. eh itu kok card nya bisa langsung ke center?
+     bisa langsung pake "center" gitu ga diketik
+     KALO CENTER itu buat elemnt didalamnya yang saya tahuu sihh
+     mainnin posisi absolute + sesuain sama ukuran card nya
+     ohh pantes daritadi nyoba ga bisa bisa
+    MANA MASIH PUTIH ITU 
+gamau nyoba disini
+loh?
+malu ah HAHHAHAH di depan sepuh
+aduh tehh
+kapan lagi nyoba 
+kan gw bisba bikin file sendiri
+ yeuu
+aduhh, gaseru
+kan tujuan live buat liat gimnaaa
+jangan diketawain ya puh
+emng tau ketawa ato ga xixi
+TAI BANGETT gamau ah
+hem, kalo bisa jgn dihapal pake pikiran aja manipulasi tuh susunan
+hmzzz bener kan flexbox?
+iya itu nama css nya , tpi di code flex doank
+terus diapain lagi
+buat jadi 3 baris tersusun
+namanya flex-direction
+terus diapain lagi
+lanjut 
+element nya ga terdeteksi tuhhh tinggi lebar nya
+gimana buat tinggi dan lebar
+ohhhhh bisa di auto ga?
+auto nya apa ?
+dia ga ad content(contoh text didalamnya) 
+kalo begini spesifik lagi
+gimanaa blm sampe situ ilmunya
+sampe donk harusnya
+pake satuan persen(contoh 20%)
+ohh maksudnya kalo gaada text pakenya persen?
+itu apa
+ga harus persen, banyak pilihan satuan kyk cm,px dan lain
+coba satu satu satuan nya
+ini yang salaah cuma kurang spesifik satuannya?
 -->
