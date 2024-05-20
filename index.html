@@ -1,270 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TEST</title>
-    <style>
-      body {
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-        font-family: "Courier New", Courier, monospace;
-      }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> PROFILE </title>
+    <style> 
+    .main {height: 100vh; width: 100vw; display: flex; flex-direction: column;}
+    body {margin: 0; padding: 0; font-family: Courier, monospace;}
+    
+    .card{background-color: rgb(25, 40, 31);   border: 2px; border-radius: 12px; padding: 10px; height: 50vh; width: 50%;
+    top: 25%; left: 25%; text-align: center; position: absolute; display: flex; flex-direction: column; align-items: center; 
+    }
+    
+    h1{
+      width: 15vw;
+      line-height: 10px;                         
+      padding: 12px;
+      border-radius: 20px;
+      color: aliceblue;
+      border: 2px solid white
+      
 
-      .main {
-        display: flex;
-        flex-direction: column;
-        width: 100%; /*Spesifik*/
-        height: 100vh; /*spesiifk satuan, coba terus sampe muncul*/
-      }
-
-      .card {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 50%;
-        height: 50%;
-        background-color: rgb(2, 43, 2);
-        position: absolute;
-        top: 25%;
-        left: 25%;
-        border-radius: 30px;
-        box-shadow: 5px 5px 5px 5px white color(srgb red green blue);
-        flex-direction: column;
-        column-gap: 1px;
-        justify-content: space-around;
-      }
-      @media screen and (max-width: 650px) {
-        .card {
-          width: 60vw;
-          height: 30%;
-          position: absolute;
-          top: 40%;
-          left: 20%;
-        }
-      }
-      li {
-        list-style: none;
-        margin-bottom: 15px;
-      }
-      h1 {
-        margin: 0;
-
-        color: white;
-      }
+    }
+    h1:hover{
+      background-color: white;
+      color: black;
+      transition: all 1s;
+      cursor: pointer;
+    }
     </style>
   </head>
+  
   <body>
-    <div class="main">
-      <div style="flex-grow: 0.4; background-color: rgb(2, 43, 2)"></div>
-      <div style="flex-grow: 4.7; background-color: rgb(5, 135, 5)"></div>
-      <div style="flex-grow: 0.6; background-color: rgb(2, 43, 2)"></div>
-      <div style="flex-grow: 4.7; background-color: rgb(50, 58, 53)"></div>
+    <img src="IMG_20230816_210900.jpg" alt="ok" width="13%" height="26%" style="right: 43.5%;top:10%;  border-radius: 50%;position: absolute; border: 5px solid white;z-index: 1;">
+  <div class="card">
+   
+    <h2 style="margin-top: 17%; color: aliceblue;">Lorem Ipsum</h2>
+    
+    <div class="caption">
+      <h1>Profil</h1>
+      <h1>Media</h1>
+      <h1>About Me</h1>
     </div>
-    <div class="card">
-      <img
-      src="IMG_20230816_210900.jpg"
-        alt=""
-        width="120vw" 
-        height="125vh"
-        style="
-          border-radius: 50%;
-          border: 2px solid white;
+  </div>
 
-          margin-top: 10px;
-          margin-bottom: 10px;
-        "
-      />
-      <h4 style="color: white">CHRISTY OII</h4>
-      <div
-        class="teks"
-        style="
-          display: flex;
-          align-items: center;
-          justify-content: center;
 
-          flex-direction: column;
-          margin-bottom: 3vh;
-        "
-      >
-        <h1>TES</h1>
-        <h1 style="margin: 5px 0px">TES</h1>
-        <h1>TES</h1>
-      </div>
-    </div>
-  </body>
+  <div class="main">
+    <div style="flex-grow: 0.3; background-color: rgb(56, 63, 82);"></div>
+    <div style="flex-grow: 4.7; background-color: rgb(30, 141, 102);"></div>
+    <div style="flex-grow: 0.6; background-color: rgb(25, 40, 31);"></div>
+    <div style="flex-grow: 4.7; background-color: rgb(56, 63, 82);"></div>
+  </div>
+  
+</body>
+
 </html>
 
 <!--
-    TESSS BARU
-    aduh kok jelek ya warnanya
-    aduh masalah color yaa, jgn nanya saya hihi
-    ala kadarnya dlu ya nanti dibenerin WKKWKW
-    tapi aqua nya mencolok 
-    gitu aja???
-   
+  Discord aje min jgn sambil ngetik gimana?
+  maleman ajaa, lagi ramee
+  ok
+  terus ni ga jadi nih? enak dc sie bener, bolehhh
+  tunggu
+  live server deh
+  biar lgsng keliatan browser
+  coba bisa ga
+  belom
+  coba klik di bagian bawaha kiri
+  ada apa aja 
+  klik apa, shared? terus
+  nah udh coba
+  DONEEEE
+  udah?? lanjut dong
+  oiya
+  jadi dc ?
+  nanti maleman biar tenangg
+  ada yang aneh ini lebar nya
+  hah masa?
+  ga pas gitu ga sie? coba tolongin dul
+  height nya coba vh, itu .gtw itu kelas apa ? definisiin siapa ?
+  gatau hehe, ga ngaruh sih kayaknya itu udh gw otak atik sebelumnya tapi ga bisa, tetep gitu
+  nah coba skrng bikin body nya margin dan padding 0
+  di body? apa di div nya?
+  body kasih css padding margin
+  dimananya sih? ga paham ANJIERRR FOTONYA, fotonya nda keliatan ya. hoohh
+  bener ga keliatan ?
+  haha iseng bntr
+  bikin body{} beigtu nah isi padding margin bukan di main
+  dullll btw kok kotak ditengahnya diilangin? dihh ada tadi
+  nda dri awal muncul begitu
+  cuma iseng nambah foto
+  kok ilang ya, coba dul itu backgroundnya dimundurin bisa ga? kayaknya kotaknya ketutupan
+bisa, coba dong 
+tutmaoskrudnya
+maskudnya backgorund apa mundurin, hah? itu kan tadi gw udh buat kotak gitu tapi kayaknya ketutup sama warna bg nya
+biar kotaknya muncul didepan bg nya gimana
+oh , bikin p{
+  z-index:1;} gaadaa
+  aduh
+  sorry minn he
+  kok bisaaaa? diaapain?
+  jadi kalo mau bikin kotak kayak gitu, kitaa jangan pake paragraf terus manipulasi, ribet, pake div aja
+  heheh gimana itu caranya, tadi lu nambain apa?
+  postion ganti dari inherit jadi absoulte
+  yaelahhhhhh daritadi siang gw ngakalin
+  keren yo lanjut
+  lanjut itu dikebawahin hurufnya
+  lanjut rombak p ganti div !!!!!
+  gitu kan? nextt
+  postion nya hapus coba
+  ilang 
+  iya, skkrng yang di main juga ilangin
+  absolute sama absolute
+  ilang, terus diapain biar nongol, skrng tambahin absolute lagi dio div yang kotak ? kenapa ? karena dia didepan bukan sebagai background
+  sama sama mau diduluin
+
+  ehhh kok udh bener sih ini lebarnya, karena position? iya positon 
+  kok gw tambahin posisi lagi tapi tetep bener
+  dimana, main
+  gatau deh yausah lanjutt
+  ada sih menurut gw kenapa begitu, kenapa?? ada yang beda ga susunan nya ? ada
+  sama sama punya absolute, tpi kotak ilang, tapi lebarnya juga ga aneh
+  yduah lanjut
+  
+  tadi gw aneh kenapa ya?karena sebelumnya body belum diatur margin padding, jadi dari sono ada jarak otomatis, coba hapus css body
+  ya allah lupa tadi lu suruh tambahin ya
+  oke next, munculin foto profile
+  ya udah img
+  ahahha
+  kocak, munculin template buat fotonya dlu gimanaa
+  skrng coba gimana cara biar foto bisa di tengah
+  ya udah img
+  ahahha
+  coba img aja tambahin hehe bisa di tengah ga tuh
+  dih kok gitu puhhh, ajarinnnnn 
+  pah ppuh pah puh rapuh
+  syepuh
 
 
-    /*TULIS KOMEN DISINI
-      itu udahhh, aduhhhh
-      sip dah muncul
-      skrng akalin
-      kalo lebar mau full tulis aja 100%
-      wuih
-      salah ya?
-      bagian height nya masih ketinggian keliatannya
-      nah itu turuninnya giman
-      pake satuan vh, satuan yg sesuai device(sepertinya)
-      kalo 100vh berarti full 100% sesuai layar
-      sip
-      kalo gitu width nya juga bisa 100vh?
-      bisa
-      ohhhhh, baru tau satuan vh
-      lanjut dong dul card nya hihihi
-      kok setengah itu lebar nya
-      engga tuh
-      ga kalo width itu pake vw
-      coba ganti persen
-      nah itu enak udh responsive
-      itu udah persen
-      gas lajut card
-      pertma biar keliahatan atur tinggi lebar sesuai(spesifik) lalu kasih background color
-      kalo card gimana, kok ga nongol
-      kasih warna, terus?
-      makdusnya background tehhh
-      color itu buat dalam nya
-      hmmmm
-      buat timpa diatas div main pake position absolute
-      di div nya ya?
-      itu udh bener
-      tinggal atur posisi top right nya
-      command nya apa? a
-      top:;
-      heehehe
-      jgn keserignan auto
-      nahhh bisa juga margin.senyaman nya aja mana
-      kalo mau tengan tulis margin:0 auto; top right nya hapus
-      kalo ga pake marginn pake apa, top right left atau bottom
-      bisa pake vh ga bisa
-      akalin logika sangkut paut ama lebar tinggi div main
-      nah gimana tuh jarak biar bisa di titik tengah
-      maksudnya itu pake top, right doang diakalin?
 
-      bang bang mau nanya bang, apakah kalo perbaningan 50 50 akan selalu ditengah????
-      nda gampngnya 1:2:1 nah 2 itu lebar card sedanngkan jarak kiri kanan itu pake satuan yang sama 1:1
-      udah
-      tapi ini rada mengsong ke kiri wkwkkkkw
-      oh iya teh gimana tuh
-      coba pake persen top right nya
-      apa inni karna liatnya ga full ya? kan absolute
-      bisa itu, nah karena 1:2:1 agak ribet coba ganti top sama left aja  (top:50%; left:50%;)
-      loh
-      omaygat HAHHAHA
-      omaygatt tidak, s,alah di width height
-      nahkan nahkan coba gimana
-      wah
-      kegedean deh 50 50
-      nah manipulasi deh
-      kan jasmine udh ngirim satuan px nya dul
-      oh itu coba diterpin deh
-      tpi minus nya ga responsif
-      mo nangisssss
-      Gilee kita ngetik kode 180 bariss
-      kren ini mah
-      ngga ini kayaknya udh bag
-      haahhhahuas  50 50
-      sudah pasrah lebar tinggi nya hahahhahahaha
-      ngga cuyy coba liat full screem deh
-      ini ujungnya bisa dijadiin bulet gitu ga? bisar mirip layout jasmine
-      bisa pake border-radius satuan px aja
 
-      */
-      /*px aja
-        iiii
-        amazing
-         spiderman
-        minah buat isi nya pa ye
-        hah?
-        hem coba lenbih dimiripin
-        ih udh miripp ganti warna aqua jadi green
-        ini bisa dibersihin dlu gaa chatnya
-        bisa
-        hapus aja minah
-        WKWKWKW yaudha gausah kenang kenangan biar dikira bjorka
-        tapi nanti baris kode nya dikit  xixi
-        rapihin aja
 
-    MAIN FLEXBOX YA
-    gw nyimakk, ajarin dluu
-    kalo gw liat file lu yg lain keliatan ga? mksdnya ketawan ga di lu nya?
-    nama folder apa. projek fast
-    oh itu loh keliatan hemm boleh liat aje, g keliatan atas nya , cuma keliatan pas minah edit disini
-    ohh bagus bagus
-    kyk gini gambaran background nya
-    buat main content atau yg ditengah gimana menurut minah?
-    ini gw blm bisa liat live nyaaaaaa
-    cobaa balik ke file nya
-    folto lagi?
-    iyaa
-    dah lanjutin bro
-    yang bagian foto nama dan lain
-    itu tambah div doang??
-    bisaa juga
-    tpi diluar div main 
-    maksudnya gimana
-    yooo, nah bgitulah lnjyttt
-    mo tanyaaaaaa, flex itu apa?
-    itu buat ngatur posisi biar lebih mudah aja disusun
-    jelasnya liat di w3school
-    ini masuknya css?? oh iyaa ada ada
-    yoii
-    makasiiii dul. eh itu kok card nya bisa langsung ke center?
-    buat ulang
-    WAHAHHHAHHAHHHA KEJAM CUYY coba cmd+z
-    balik lagi tuh code
-    udah hafal 
-    wahhh
-    becanda HAHHHAH makasi dul
-     makasiiii dul. eh itu kok card nya bisa langsung ke center?
-     bisa langsung pake "center" gitu ga diketik
-     KALO CENTER itu buat elemnt didalamnya yang saya tahuu sihh
-     mainnin posisi absolute + sesuain sama ukuran card nya
-     ohh pantes daritadi nyoba ga bisa bisa
-    MANA MASIH PUTIH ITU 
-gamau nyoba disini
-loh?
-malu ah HAHHAHAH di depan sepuh
-aduh tehh
-kapan lagi nyoba 
-kan gw bisba bikin file sendiri
- yeuu
-aduhh, gaseru
-kan tujuan live buat liat gimnaaa
-jangan diketawain ya puh
-emng tau ketawa ato ga xixi
-TAI BANGETT gamau ah
-hem, kalo bisa jgn dihapal pake pikiran aja manipulasi tuh susunan
-hmzzz bener kan flexbox?
-iya itu nama css nya , tpi di code flex doank
-terus diapain lagi
-buat jadi 3 baris tersusun
-namanya flex-direction
-terus diapain lagi
-lanjut 
-element nya ga terdeteksi tuhhh tinggi lebar nya
-gimana buat tinggi dan lebar
-ohhhhh bisa di auto ga?
-auto nya apa ?
-dia ga ad content(contoh text didalamnya) 
-kalo begini spesifik lagi
-gimanaa blm sampe situ ilmunya
-sampe donk harusnya
-pake satuan persen(contoh 20%)
-ohh maksudnya kalo gaada text pakenya persen?
-itu apa
-ga harus persen, banyak pilihan satuan kyk cm,px dan lain
-coba satu satu satuan nya
-ini yang salaah cuma kurang spesifik satuannya?
--->
 
+  h
