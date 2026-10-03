@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Manufacturing Knowledge Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        /* High-Contrast Dark Theme for Industrial Field Use */
+        --bg: #0f172a;
+        --card: #1e293b;
+        --border: #334155;
+
+        --text-primary: #ffffff;
+        --text-secondary: #94a3b8;
+
+        --accent-red: #ef4444;
+        --accent-red-bg: rgba(239, 68, 68, 0.15);
+
+        --accent-blue: #3b82f6;
+        --accent-blue-bg: rgba(59, 130, 246, 0.15);
+
+        --accent-green: #10b981;
+        --accent-green-bg: rgba(16, 185, 129, 0.15);
+
+        --accent-amber: #f59e0b;
+        --accent-amber-bg: rgba(245, 158, 11, 0.15);
+
+        --accent-purple: #8b5cf6;
+        --accent-purple-bg: rgba(139, 92, 246, 0.15);
+
+        padding-top: env(safe-area-inset-top, 0px);
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        background: var(--bg);
+        color: var(--text-primary);
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .font-serif-header {
+        font-family: "Times New Roman", Times, serif;
+      }
+
+      .leading-relaxed-body {
+        line-height: 1.75;
+      }
+
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+      }
+
+      .field {
+        background: #0f172a;
+        border: 1px solid var(--border);
+        color: var(--text-primary);
+      }
+
+      .field:focus {
+        outline: none;
+        border-color: var(--accent-blue);
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+      }
+
+      .field option {
+        background: #0f172a;
+        color: var(--text-primary);
+      }
+
+      .citation-chip {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid var(--border);
+        color: var(--text-secondary);
+        transition:
+          border-color 160ms ease,
+          color 160ms ease;
+      }
+
+      .citation-chip:hover {
+        border-color: var(--accent-blue);
+        color: var(--text-primary);
+        background: rgba(59, 130, 246, 0.1);
+      }
+
+      .btn-primary {
+        background: var(--accent-blue);
+        color: #ffffff;
+      }
+
+      .btn-primary:hover {
+        background: #2563eb;
+      }
+
+      .btn-ghost {
+        background: transparent;
+        border: 1px solid var(--border);
+        color: var(--text-secondary);
+      }
+
+      .btn-ghost:hover {
+        border-color: var(--accent-blue);
+        color: var(--text-primary);
+      }
+
+      .btn-danger {
+        background: rgba(239, 68, 68, 0.1);
+        border: 1px solid var(--accent-red);
+        color: var(--accent-red);
+        transition: all 150ms ease;
+      }
+
+      .btn-danger:hover {
+        background: var(--accent-red);
+        color: #ffffff;
+      }
+
+      .view {
+        transition:
+          opacity 180ms ease,
+          transform 180ms ease;
+      }
+
+      .view-hidden {
+        opacity: 0;
+        transform: translateY(6px);
+        pointer-events: none;
+        position: absolute;
+        inset: 0;
+      }
+
+      .view-visible {
+        opacity: 1;
+        transform: translateY(0);
+        position: relative;
+      }
+
+      .step-marker {
+        font-family: "Times New Roman", Times, serif;
+        background: var(--accent-green-bg);
+        color: var(--accent-green);
+        border: 1px solid rgba(16, 185, 129, 0.35);
+      }
+
+      .material-chip {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.5rem 0.75rem;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid var(--border);
+        border-radius: 0.375rem;
+      }
+
+      /* Blueprint Grid Background */
+      .blueprint-bg {
+        background-color: #0b1120;
+        background-image:
+          linear-gradient(rgba(59, 130, 246, 0.15) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(59, 130, 246, 0.15) 1px, transparent 1px);
+        background-size: 20px 20px;
+        border: 1px solid var(--accent-blue);
+      }
+
+      /* Style untuk Tag Sumber Data */
+      .tag-source {
+        font-size: 9px;
+        padding: 2px 5px;
+        border-radius: 4px;
+        background: rgba(255, 255, 255, 0.1);
+        color: #cbd5e1;
+        margin-left: 8px;
+        letter-spacing: 0.5px;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+
+      @keyframes pulse-ring {
+        0% {
+          transform: scale(0.8);
+          opacity: 1;
+        }
+        100% {
+          transform: scale(1.5);
+          opacity: 0;
+        }
+      }
+
+      .pulse-circle {
+        transform-origin: center;
+        animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen">
+    <!-- ================= STATE 1: SEARCH ================= -->
+    <div
+      id="view-search"
+      class="view view-visible min-h-screen flex items-center justify-center px-6"
+    >
+      <div class="w-full max-w-2xl">
+        <div class="text-center mb-10">
+          <p
+            class="text-sm tracking-wide text-slate-400 mb-3 uppercase font-bold"
+          >
+            Industrial Data Ops
+          </p>
+          <h1
+            class="font-serif-header text-4xl sm:text-5xl mb-4"
+            style="color: var(--text-primary)"
+          >
+            Manufacturing Knowledge Hub
+          </h1>
+          <p
+            class="text-base text-slate-300 max-w-prose mx-auto leading-relaxed-body"
+          >
+            Search equipment history, interlock logic, and corrective procedures
+            in one place.
+          </p>
+        </div>
+
+        <div class="card rounded-lg p-6 sm:p-8 relative shadow-2xl">
+          <!-- Error Toast -->
+          <div
+            id="error-toast"
+            class="hidden absolute -top-14 left-0 w-full bg-red-900/90 border border-red-500 text-white text-sm p-3 rounded-md text-center font-medium shadow-lg"
+          ></div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+            <div>
+              <label
+                for="equipment-tag"
+                class="block text-xs font-medium text-slate-400 mb-2"
+                >Equipment Tag <span class="tag-source">SAP PM</span></label
+              >
+              <select
+                id="equipment-tag"
+                class="field w-full rounded-md px-3 py-2.5 text-sm"
+              >
+                <option value="GA-1201A">GA-1201A (HEXANE FEED PUMP)</option>
+                <option value="YD-2301">
+                  YD-2301 (POLYMER FLUID BED DRYER)
+                </option>
+                <option value="DC-3401A">
+                  DC-3401A (CATALYST REDUCTION REACTOR)
+                </option>
+                <option value="KC-4501">
+                  KC-4501 (RECYCLE GAS COMPRESSOR)
+                </option>
+                <option value="EA-5601">EA-5601 (SOLVENT HEATER)</option>
+                <option value="LV-6701">
+                  LV-6701 (SEPARATOR LEVEL CONTROL VALVE)
+                </option>
+                <option value="CT-7801">
+                  CT-7801 (COOLING TOWER CELL FAN)
+                </option>
+                <option value="FA-8901">
+                  FA-8901 (REFLUX ACCUMULATOR DRUM)
+                </option>
+              </select>
+            </div>
+            <div>
+              <label
+                for="discipline"
+                class="block text-xs font-medium text-slate-400 mb-2"
+                >Discipline Filter</label
+              >
+              <select
+                id="discipline"
+                class="field w-full rounded-md px-3 py-2.5 text-sm"
+              >
+                <option value="All">All Disciplines</option>
+                <option value="Mechanical">Mechanical</option>
+                <option value="Instrument">Instrument</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="mb-5">
+            <label
+              for="anomaly-input"
+              class="block text-xs font-medium text-slate-400 mb-2"
+              >Anomaly Description</label
+            >
+            <input
+              id="anomaly-input"
+              type="text"
+              placeholder="Type here"
+              class="field w-full rounded-md px-4 py-3 text-sm"
+              value=""
+            />
+            <p class="text-[10px] text-slate-500 mt-2">
+              <b>Demo Keywords:</b> Be sure to use one of the problem indicator
+              terms, such as “Pump Vibration Trip,” “Pump Overheat Trip,” and
+              “Pump Smell not good ”
+            </p>
+          </div>
+
+          <button
+            id="analyze-btn"
+            class="btn-primary w-full rounded-md py-3 text-sm font-medium transition-colors duration-150"
+          >
+            Analyze & Verify
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= STATE 1.5: LOADING ================= -->
+    <div
+      id="view-loading"
+      class="view view-hidden min-h-screen flex items-center justify-center px-6"
+    >
+      <div class="text-center">
+        <div
+          class="w-10 h-10 border-4 border-slate-600 border-t-[var(--accent-blue)] rounded-full animate-spin mx-auto mb-6"
+        ></div>
+        <p
+          id="loading-text"
+          class="text-sm tracking-wide text-slate-200 font-medium"
+        >
+          Connecting to Asset Integrity...
+        </p>
+      </div>
+    </div>
+
+    <!-- ================= STATE 2: DASHBOARD ================= -->
+    <div id="view-dashboard" class="view view-hidden min-h-screen">
+      <div class="dashboard-shell max-w-5xl mx-auto px-4 sm:px-6 py-8">
+        <!-- Dynamic Header -->
+        <div
+          class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8 pb-6 border-b border-slate-700"
+        >
+          <div>
+            <p
+              class="text-xs text-slate-400 mb-1 font-medium uppercase tracking-wider"
+            >
+              Diagnostic result for
+            </p>
+            <h2
+              id="header-tag"
+              class="font-serif-header text-3xl font-bold"
+              style="color: var(--text-primary)"
+            >
+              GA-1201A | Component
+            </h2>
+          </div>
+          <div class="flex items-center gap-6">
+            <!-- Tempat Confidence Score Diinjeksi -->
+            <div class="text-right" id="confidence-header">
+              <!-- Will be injected by JS to avoid null errors -->
+            </div>
+
+            <button
+              id="new-query-btn"
+              class="btn-ghost rounded-md px-4 py-2 text-sm transition-colors duration-150 font-medium"
+            >
+              New Query
+            </button>
+          </div>
+        </div>
+
+        <!-- STACKED LAYOUT -->
+        <div class="flex flex-col gap-8" id="dashboard-stack">
+          <!-- Cards will be injected here by JavaScript -->
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <!-- Modal Notifikasi Submit Berhasil -->
+    <div
+      id="success-modal"
+      class="custom-modal"
+      style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+      "
+    >
+      <div
+        style="
+          background: #0f172a;
+          border: 1px solid #334155;
+          border-left: 4px solid #10b981;
+          border-radius: 12px;
+          padding: 24px;
+          max-width: 400px;
+          width: 90%;
+          text-align: center;
+          box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+        "
+      >
+        <div
+          style="
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: rgba(16, 185, 129, 0.2);
+            color: #34d399;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            font-size: 24px;
+          "
+        >
+          <i class="fa-solid fa-check"></i>
+        </div>
+        <h3
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 8px;
+          "
+        >
+          MOC Submission Successful
+        </h3>
+        <p style="font-size: 14px; color: #cbd5e1; margin-bottom: 24px">
+          New problem added to database and will go to verification.
+        </p>
+        <button
+          onclick="closeModalAndReset()"
+          style="
+            width: 100%;
+            background: #059669;
+            color: white;
+            font-weight: bold;
+            padding: 10px;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+          "
+        >
+          OK / Kembali ke Beranda
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
