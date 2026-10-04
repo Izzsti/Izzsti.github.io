@@ -861,7 +861,7 @@
       }, 700);
     } else {
       // Tampilkan Peringatan Jika Keyword Tidak Ada
-      errorToast.innerHTML = `⚠️ There are many typo , type again or   Use the Demo Keyword !</b>.`;
+      errorToast.innerHTML = `⚠️ Sorry, aside from the Hexana Pump, the other tools are still under development, so please try using the suggested keywords (below the input field), then pay attention to the discipline, and refresh first.</b>.`;
       errorToast.classList.remove("hidden");
       inputField.classList.add("border-red-500");
       setTimeout(() => inputField.classList.remove("border-red-500"), 3000);
